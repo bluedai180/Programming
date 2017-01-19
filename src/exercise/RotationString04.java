@@ -1,5 +1,5 @@
 
-package chapter1;
+package exercise;
 
 import java.util.Scanner;
 
