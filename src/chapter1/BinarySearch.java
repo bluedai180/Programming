@@ -3,7 +3,7 @@ package chapter1;
 import java.util.Arrays;
 
 public class BinarySearch {
-    private static int[] source = {3, 9, 5, 2, 7 ,3, 6, 0};
+    private static int[] source = {3, 9, 5, 2, 7 ,3, 6};
     private static int key = 7;
 
     private static int Search(int[] a, int mid) {
