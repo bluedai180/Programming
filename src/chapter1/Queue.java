@@ -5,10 +5,10 @@ import java.util.Iterator;
 /**
  * Created by HIPADUSER on 2017/2/4.
  */
-public class Stack<Item> implements Iterable<Item> {
-
-    private int num;
+public class Queue<Item> implements Iterable<Item> {
     private Node first;
+    private Node last;
+    private int num;
 
     private class Node {
         Item item;
@@ -23,27 +23,35 @@ public class Stack<Item> implements Iterable<Item> {
         return num;
     }
 
-    public void push(Item item) {
-        Node oldfirst = first;
-        first = new Node();
-        first.item = item;
-        first.next = oldfirst;
+    public void enqueue(Item item) {
+        Node oldlast = last;
+        last = new Node();
+        last.item = item;
+        last.next = null;
+        if (isEmpty()) {
+            first = last;
+        } else {
+            oldlast.next = last;
+        }
         num++;
     }
 
-    public Item pop() {
+    public Item dequeue() {
         Item item = first.item;
         first = first.next;
+        if (isEmpty()) {
+            last = null;
+        }
         num--;
         return item;
     }
 
     @Override
-    public Iterator<Item> iterator() {
-        return new StackIterator();
+    public Iterator iterator() {
+        return new QueueIterator();
     }
 
-    private class StackIterator implements Iterator<Item> {
+    private class QueueIterator implements Iterator<Item> {
         private Node current = first;
 
         @Override
