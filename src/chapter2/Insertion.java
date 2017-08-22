@@ -7,10 +7,22 @@ public class Insertion {
     public static void sort(Comparable[] a) {
         int N = a.length;
         for (int i = 1; i < N; i++) {
-            for (int j = i; j > 0 && less(a[j], a[j-1]); j--){
-                exch(a, j, j-1);
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                exch(a, j, j - 1);
             }
         }
+    }
+
+    public static void sort(String[] a, int lo, int hi, int d) {
+        for (int i = lo; i <= hi; i++) {
+            for (int j = i; j > lo && less(a[j], a[j - 1], d); j--) {
+                exch(a, j, j - 1);
+            }
+        }
+    }
+
+    private static boolean less(String s, String w, int d) {
+        return s.substring(d).compareTo(w.substring(d)) < 0;
     }
 
     public static boolean less(Comparable v, Comparable w) {
@@ -23,8 +35,8 @@ public class Insertion {
         a[j] = t;
     }
 
-    public static void show(Comparable[] a){
-        for (int i = 0; i < a.length; i++){
+    public static void show(Comparable[] a) {
+        for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]);
         }
         System.out.println();
