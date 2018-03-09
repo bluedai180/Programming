@@ -1,4 +1,4 @@
-package src.facade;
+package facade;
 
 public class Module1 {
     public void testFunctionA() {

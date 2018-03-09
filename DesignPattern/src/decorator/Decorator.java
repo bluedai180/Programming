@@ -4,14 +4,14 @@ package decorator;
  * Created by Blue on 2018/3/5.
  */
 public class Decorator implements Component {
+    public Decorator() {}
 
-    private Component component;
-    public Decorator(Component component) {
-        this.component = component;
+    public Decorator(Component component){
+        component.operation();
     }
 
     @Override
     public void operation() {
-        component.operation();
+        System.out.println("原始类方法");
     }
 }

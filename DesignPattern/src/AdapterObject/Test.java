@@ -1,9 +1,6 @@
 package AdapterObject;
 
 
-import AdapterClass.*;
-import AdapterClass.Adaptee;
-
 /**
  * Created by Blue on 2018/3/5.
  */

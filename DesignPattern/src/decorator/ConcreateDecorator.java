@@ -4,15 +4,19 @@ package decorator;
  * Created by Blue on 2018/3/5.
  */
 public class ConcreateDecorator extends Decorator {
+    private Decorator decorator;
+
     public ConcreateDecorator(Component component) {
         super(component);
     }
 
-    public void operation() {
-        super.operation();
-        addBehavior();
+    public ConcreateDecorator() {
+        super();
     }
 
-    public void addBehavior() {
+    @Override
+    public void operation() {
+        super.operation();
+        System.out.println("装饰器方法");
     }
 }

@@ -1,4 +1,4 @@
-package src.facade;
+package facade;
 
 public class Facade {
     private Module1 module1 = null;

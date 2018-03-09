@@ -1,12 +1,9 @@
 package AdapterObject;
 
-import AdapterClass.*;
-import AdapterClass.Adaptee;
-
 /**
  * Created by Blue on 2018/3/5.
  */
-public class Adapter implements AdapterClass.Target {
+public class Adapter implements Target {
 
     private Adaptee adaptee;
 
